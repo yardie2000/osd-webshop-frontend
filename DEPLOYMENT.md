@@ -22,10 +22,26 @@ Hinweis: `webshop.osd-bln.com` ist vor dem Cloudflare/STRATO-DNS-Schritt erwartb
    - Framework preset: `None`
    - Build command: `npm run build`
    - Build output directory: `dist`
+   - Deploy command: leer lassen
    - Root directory: Projektwurzel
    - Environment variables: keine erforderlich
 5. Deploy ausführen.
 6. Nach erfolgreichem Deploy die `*.pages.dev` URL kurz prüfen.
+
+Wichtig: Kein `npx wrangler deploy` als Deploy Command eintragen. Dieses Projekt ist eine Cloudflare-Pages-Seite, kein Worker-Deploy. Wenn Cloudflare nach dem erfolgreichen Build `Executing user deploy command: npx wrangler deploy` ausführt, ist die Einstellung falsch und muss entfernt werden.
+
+Falls der Build mit einer Worker-Meldung wie `A Worker named "osd-webshop-frontend" already exists` abbricht:
+
+1. Cloudflare Dashboard öffnen.
+2. `Workers & Pages` > Projekt `osd-webshop-frontend` öffnen.
+3. `Settings` > `Builds & deployments` bzw. `Build` öffnen.
+4. `Deploy command` komplett löschen.
+5. Prüfen:
+   - Build command: `npm run build`
+   - Build output directory: `dist`
+   - Root directory: leer oder `/`
+6. Speichern.
+7. Deployment erneut starten.
 
 ## Custom Domain
 
