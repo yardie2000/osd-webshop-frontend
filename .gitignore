@@ -1,0 +1,10 @@
+.sales-work/
+outputs/
+__pycache__/
+dist/
+old-index.zip
+build_webshop_import.py
+UX_UI_AUDIT.md
+OSD Inventarverkauf.html
+*.pyc
+*.log

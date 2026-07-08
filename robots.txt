@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://webshop.osd-bln.com/sitemap.xml
